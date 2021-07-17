@@ -1,0 +1,15 @@
+.signin-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .register {
+        .register-link {
+            font-size: calc(20px);
+            color: black;
+            padding: 10px 10px;
+            text-decoration: none;
+            cursor: pointer;    
+        }
+    }
+}
