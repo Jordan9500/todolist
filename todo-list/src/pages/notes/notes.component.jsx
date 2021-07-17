@@ -80,8 +80,7 @@ class NotesPage extends React.Component {
     }
 
     render() {
-        const {notes, authed} = this.state;
-        const { note, noteTitle } = this.state;
+        const { notes, authed, note, noteTitle } = this.state;
         const { onChange, onSubmit } = this;
         return (
             <div className='notes-page'>
@@ -132,12 +131,14 @@ class NotesPage extends React.Component {
                 </Button>
                 <div className='notes'>
                     {
-                        authed ?
+                        authed && notes.length !== 0 ?
                             notes.map(({ notes_id, ...otherNotesProps }) => (
                                 <Note key={notes_id} {...otherNotesProps}/>
                             ))
+                        : notes.length === 0 ?
+                            <Note key="0" noteTitle="No Notes" note="Create a new note" />
                         :
-                        <Note key={0} noteTitle="Sign in" note="Register to create notes" updatedAt />
+                            <Note key="0" noteTitle="Sign in" note="Register to create notes" />
                     }
                 </div>
             </div>

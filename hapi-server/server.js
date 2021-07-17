@@ -2,8 +2,6 @@ const Hapi = require('@hapi/hapi');
 const Boom = require('@hapi/boom');
 
 const mysql = require('mysql2');
-const Joi = require('joi');
-const jsonwebtoken = require('jsonwebtoken');
 
 const { validateJwt } = require("./auth");
 const { createToken, deleteToken } = require('./utils/Token');
